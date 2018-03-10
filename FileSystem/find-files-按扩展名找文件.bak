@@ -1,0 +1,14 @@
+#lang racket
+
+;按扩展名查找文件 (path ext -> list)
+(define (find-files-by-ext path [ext #f])
+                          (find-files (lambda (file)
+                                         ;(printf "find=~a~n" file)
+                                         (if (and (string? ext)
+                                                  (string-suffix? (path->string file) ext))
+                                             #t
+                                             #f))
+                                      path
+                                      #:skip-filtered-directory? #f))
+
+(find-files-by-ext "d:/tmp/common")

@@ -1,0 +1,3 @@
+#lang racket
+
+(fold-files (lambda (item type result)(printf "file=~a type=~a c=~a~n" item type (list? result) )) '())

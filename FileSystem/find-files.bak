@@ -1,0 +1,9 @@
+#lang racket
+(find-files (lambda (file)
+              (printf "find=~a~n" file) #f) "d:/tmp/common" #:skip-filtered-directory? #f)
+
+;查找文件
+(find-files (lambda (file)
+              (printf "find=~a~n" file)
+              (if (string-suffix? (path->string file) ".java") #t #f)
+              ) "d:/tmp/common" #:skip-filtered-directory? #f)
