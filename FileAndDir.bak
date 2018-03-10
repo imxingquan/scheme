@@ -1,0 +1,14 @@
+#lang racket
+;目录
+(define dir "D:/bz/src/BzProject/src/main/java/com/pansome")
+(define dir2 "D:/bz/src/BzProject/src/main/java/com/pansome/repository")
+(define (files dir-path)
+  (directory-list dir-path))
+
+(define files-list (files dir))
+
+(define (my-maps file dir)
+  (cond [(empty? dirs) empty]
+        [else (files (first dirs)
+    )
+  )

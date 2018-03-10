@@ -1,0 +1,23 @@
+
+#lang racket
+(define dir "D:/tmp/common")
+;(define dir "D:/tmp/autocad.2012.lite/AutoCAD_2012_32bit_Setup")
+
+(define (enum-files dir)
+  (current-directory dir)
+  (directory-list dir))
+
+
+(define (get-files files)
+  (cond
+    [(empty? files) empty]
+    [(not (file-exists? (first files))) (get-files (enum-files (path->complete-path (first files))))]
+    [else
+     (cons (path->complete-path (first files)) (get-files (rest files)))]))
+
+  
+
+
+;(enum-files dir)
+
+(get-files (enum-files dir))

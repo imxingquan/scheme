@@ -1,0 +1,18 @@
+#lang racket
+(define dir2 "D:/tmp/common")
+(current-directory dir2)
+(define (dir-files dir-path)
+  (directory-list dir-path))
+
+;目录下的所有文件
+(define files (dir-files dir2))
+
+(define (enums-file-in-dir2 dirs)
+    (cond
+      ;[(empty? dirs) empty]
+      [(file-exists? (first dirs))
+         ;(display (path->complete-path (first dirs)))
+         ;(cons (path->complete-path (first dirs)) (enums-file-in-dir2 (rest dirs)))]))
+         (cons  (first dirs) (enums-file-in-dir2 (rest dirs)))]))
+
+(define f (enums-file-in-dir2 files))
