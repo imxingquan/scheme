@@ -33,9 +33,21 @@
 
                  )))
 
-(new menu% 
-     (label "&About") 
-     (parent menu-bar))
+(define menu-file-ext (new menu% 
+     (label "&File Ext") 
+     (parent menu-bar)))
+(define menu-file-ext-java (new checkable-menu-item%
+     (label "&Java File")
+     (parent menu-file-ext)
+     (callback (lambda (obj event)
+                
+                 (define is-java-file (send obj is-checked?))
+                 (if is-java-file
+                      (set! file-ext ".java")
+                      (set! file-ext #t))
+                 (println file-ext)
+                 
+                 ))))
 
 
 (send text insert "计算代码行数") 

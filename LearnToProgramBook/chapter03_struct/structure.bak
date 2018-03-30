@@ -1,0 +1,5 @@
+#lang racket
+
+;定义结构
+;(struct struct-name (element1 element2 ...)
+(struct student (name id# dorm))

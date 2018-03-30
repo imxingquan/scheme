@@ -2,6 +2,9 @@
 (require racket/gui)
 (require "count-file-lines.rkt")
 
+
+(define file-ext #t)
+
 (define frame (new frame% [label "Example"][ width 800] [height 600]))
 
 (define editor-canvas (new editor-canvas% 
@@ -20,9 +23,9 @@
      (label "&Open Directory")
      (parent menu-file)
      (callback (lambda (obj event)
-                 (define a (get-directory))
+                 (define path (get-directory))
                  (send text erase)
-                 (define sum-str (sum-line a ".java" (lambda (x)
+                 (define sum-str (sum-line path file-ext (lambda (x)
                                        (printf "~a" x)
                                        (send text insert x) 
                                        )))
@@ -30,14 +33,20 @@
 
                  )))
 
-(new menu% 
+(define menu-about (new menu% 
      (label "&About") 
-     (parent menu-bar))
+     (parent menu-bar)))
+(define menu-about-me (new menu-item%
+     (label "&About Me")
+     (parent menu-about)
+     (callback (lambda (obj event)
+                 (display event)
+                 ))))
 
 
 (send text insert "计算代码行数") 
 (send editor-canvas set-editor text) 
 
-
+;(play-sound "C:/Windows/media/Ring05.wav" #t)
 (send frame show #t)
 

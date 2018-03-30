@@ -1,0 +1,25 @@
+#lang racket
+(require "comm.rkt")
+
+;询问是否未0?
+ (zero? 42)
+;两个symbol 是否相等?
+(symbol=? 'a 'b)
+;是否相等
+(eq? true #t)
+(eq? 'a 'a)
+
+(struct employee(id name)#:transparent)
+(define emp1 (employee 102 'Jack))
+
+;output: #t
+(employee? emp1)
+
+(printf "(number? 'a) = ~a\n" (number? 'a))
+(string? "hello world")
+(boolean? "false")
+
+(= 1 2)
+(boolean=? #f #f)
+(string=? "hello" "hello")
+

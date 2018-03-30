@@ -1,0 +1,4 @@
+#lang typed/racket
+(define (func arg [arg2: Real] [arg3: Real])
+  (printf "~a ~a ~a" arg arg2 arg3))
+

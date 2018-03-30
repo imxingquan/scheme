@@ -39,4 +39,4 @@
 
 ;测试
 
-(display (sum-line "D:/tmp/common" ".java" (lambda (x) (printf "~a" x))))
+;(display (sum-line "D:/tmp/common" ".java" (lambda (x) (printf "~a" x))))

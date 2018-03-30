@@ -1,6 +1,6 @@
 #lang racket
 (require math/base)
-;(require "find-files-by-ext.rkt")
+(provide sum-line)
 
 ;按扩展名查找文件 (path ext -> list)
 (define (find-files-by-ext path [ext #t])
@@ -26,16 +26,17 @@
 
 
 ;计算文件行数合计
-(define (sum-line path [ext #t])
+(define (sum-line path [ext #t] [func #f])
   (define all-files (find-files-by-ext path ext ))
   (define file-line-count (map (lambda (file)
                                (define count (count-line (file->lines file)))
-                               (printf "[行数:~a] ~a\n" count file)
+                               ;(printf "[行数:~a] ~a\n" count file)
+                               (and func (func (format "[行数:~a] ~a\n" count file )))
                                count
                                )
                              all-files))
-  (printf "合计:~a 行" (sum file-line-count)))
+  (format "合计:~a 行" (sum file-line-count)))
 
 ;测试
 
-(sum-line "D:/bz/src/BzProject/src/main/java" ".java")
+(display (sum-line "D:/tmp/common" ".java" (lambda (x) (printf "~a" x))))
