@@ -1,0 +1,58 @@
+#lang racket
+;;init graphics
+(open-graphics)
+
+;;定义坐标系的原点
+(define origin (make-posn 100 600))
+(define x1 (posn-x origin))
+(define y1 (posn-y origin))
+
+;;定义x,y轴长度
+(define x-axis-len 500)
+(define y-axis-len 500)
+
+;;定义刻度线的长度
+(define scale-len 8)
+;;定义等份
+(define gap 10)
+(define gap-len (/ x-axis-len gap))
+
+;;坐标系的终点
+;; x = x1 + xlen
+;; y = y1
+(define x-axis-end-pos (make-posn (+ x1 x-axis-len) y1))
+;; x = x1
+;; y = y1 - ylen
+(define y-axis-end-pos (make-posn x1 (- y1 y-axis-len)))
+
+(define w (open-viewport "practice" 800 700))
+; viewport window appears
+ 
+((draw-line w) origin x-axis-end-pos)
+((draw-line w) origin y-axis-end-pos)
+
+;画刻度
+;画一个X轴的刻度
+;; gap-len: 等份长度
+;; scale-len: 刻度线高度
+(define (draw-xAxis-scale0 gap-len scale-len)
+  (define k1 (make-posn (+ x1 gap-len) y1))
+  (define k2 (make-posn  (+ x1 gap-len) (- y1 scale-len)))
+  ((draw-line w) k1 k2))
+;画一个X轴的刻度
+(define (draw-yAxis-scale0 gap-len scale-len)
+  (define k1 (make-posn x1 (- y1 gap-len)))
+  (define k2 (make-posn (+ x1 scale-len) (- y1 gap-len)))
+  ((draw-line w) k1 k2))
+
+;;
+(define (draw-axis-scale skip)
+  (display gap)
+  (cond
+    [(< skip x-axis-len)
+     (draw-xAxis-scale0 skip scale-len)
+     (draw-yAxis-scale0 skip scale-len)
+     (draw-axis-scale (+ skip gap-len))]
+    [else void]))
+
+(draw-axis-scale 0)

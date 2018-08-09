@@ -1,0 +1,45 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-intermediate-reader.ss" "lang")((modname 习题12.2.1) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;;http://htdp.org/2003-09-26/Solutions/sort1.html
+;; 习题12.2.1
+;; 按照日期对邮件进行排序
+;; A mail-message is a structure: 
+;;    (make-mail name n s) 
+;; where name is a string, n is a number, and s is a string.
+(define-struct mail (from date message))
+
+(define (sort-by-date 邮件列表)
+  (cond
+    [(empty? 邮件列表) empty]
+    [else (insert-by-date (first 邮件列表) (sort-by-date (rest 邮件列表)))]))
+
+(define (insert-by-date a-mail 邮件列表)
+  (cond
+    [(empty? 邮件列表)(cons a-mail empty)]
+    [else
+     (cond
+       [(>= (mail-date a-mail) (mail-date (first 邮件列表)))
+        (cons a-mail 邮件列表)]
+       [(< (mail-date a-mail) (mail-date (first 邮件列表)))
+        (cons (first 邮件列表) (insert-by-date a-mail (rest 邮件列表)))])]))
+
+;;测试 insert-by-date
+(insert-by-date (make-mail "Tim" 1911 "hi") empty)
+;;output: (list (make-mail "Tim" 1911 "hi"))
+
+(insert-by-date (make-mail "Tim" 1911 "hi")
+                (cons
+                 (make-mail "Mark" 1913 "hi")
+                 (cons
+                  (make-mail "Tim" 1912 "hi")
+                  (cons
+                   (make-mail "Tim" 1910 "hi") empty))))
+
+(define d (cons
+           (make-mail "Mark" 1921 "hi")
+           (cons
+            (make-mail "Tim" 1956 "hi")
+            (cons
+             (make-mail "Tim" 1978 "hi") empty))))
+(sort-by-date d)

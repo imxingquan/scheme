@@ -1,0 +1,7 @@
+;执行两次匿名函数
+
+#lang racket
+(define (twice f v)
+  (f (f v)))
+
+(twice sqrt 32)
