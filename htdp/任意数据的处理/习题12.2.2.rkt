@@ -3,7 +3,7 @@
 #reader(lib "htdp-intermediate-reader.ss" "lang")((modname 习题12.2.2) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;;http://htdp.org/2003-09-26/Solutions/sort1.html
 ;; 习题12.2.2
-;; search-sorted 判断一个表是否在另一个表中存在.
+;; search-sorted 判断一个数是否在另一个有序表中存在.
 
 ;;search : number list-of-numbers -> boolean
 (define (search n alon)
