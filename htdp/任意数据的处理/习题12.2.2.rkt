@@ -14,3 +14,15 @@
 (search 3 (list 10  15 23 3))
 (search 7 (list 10  15 23 3))
 
+;;开发函数search-sorted,判断某个数是否在一个有续表中出现
+;;search-sorted : n list-of-number -> boolean
+(define (search-sorted n alon)
+  (cond
+    [(empty? alon) false]
+    [else (cond
+            [(= n (first alon)) true]
+            [(< n (first alon)) false]
+            [(> n (first alon)) (search-sorted n (rest alon))])]))
+
+(search-sorted 0 empty)
+(search-sorted 2 `(1 2 3 4)) 

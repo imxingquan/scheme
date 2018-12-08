@@ -1,0 +1,16 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-intermediate-reader.ss" "lang")((modname 习题12.3.2) (read-case-sensitive #t) (teachpacks ((lib "image.rkt" "teachpack" "2htdp") (lib "draw.rkt" "teachpack" "htdp"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "image.rkt" "teachpack" "2htdp") (lib "draw.rkt" "teachpack" "htdp")) #f)))
+#|
+  习题 12.3.1 修改connect-dots, 它的输入还包括一个posn结构体,表示与最后一个posn想连接的点.
+请使用新的connect-dots函数,修改函数draw-polygon
+|#
+
+;; connect-dots : polygon -> true
+;; 绘制 a-poly 各点之间的连线
+(define (connect-dots a-poly)
+  (cond
+    [(empty? (rest a-poly)) true]
+    [else (and (draw-solid-line (first a-poly) (second a-poly) 'red)
+               (connect-dots (rest a-poly)))]))
+
