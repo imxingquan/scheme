@@ -1,0 +1,16 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-intermediate-reader.ss" "lang")((modname 习题14.2.5) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#|
+习题 14.2.5 开发函数 create-bst,该函数读入 BST B、数 N 和符号 S,返回一棵 BST,该 BST 类似于 B,
+但是在（原来）某个 false 子树的位置上包含 node 结构体
+BST 不变式
+二叉搜索树（binary-search-tree，简称 BST）是 BT：
+1． false 总是 BST；
+2． (make-node soc pn lft rgt)是 BST，如果
+a. lft 和 rgt 是 BST，
+b. lft 中所有的 ssn 数都比 soc 小，
+c. rgt 中所有的 ssn 数都比 soc 大。
+121 
+(make-node N S false false)
+|#

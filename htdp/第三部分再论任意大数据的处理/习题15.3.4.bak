@@ -1,0 +1,12 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-intermediate-reader.ss" "lang")((modname 习题15.3.4) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+
+
+#|
+
+习题 15.3.4 开发函数 find,这个函数读入一个网页和一个符号。如果该符号没有在该网页和它的嵌入网页
+中出现，函数就返回 false。如果该符号至少出现了一次，函数就返回通往该符号的路上所遇到的头部组成
+的表。
+
+|#

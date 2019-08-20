@@ -1,0 +1,35 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-intermediate-reader.ss" "lang")((modname 习题15.3.2) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;; web datastruct
+(define-struct wp (header body))
+
+#|
+Web-page 是网页
+(make-wp h p)
+其中h是符号,p是 web docuemnt
+
+ Web docuemnt是下列三者之一
+1. empty
+2. (cons s p) 其中s是符号,p docuemnt
+3. (cons w p) 其中w是网页 p docuemnt
+|#
+#| fun template 
+(define (func a-wp)
+  ...(wp-header w-ap)...
+  ...(wp-body a-wp)...
+  ...(fun-body wp-body)...)
+
+(defien (fun-body wp-body)
+  (cond
+    [(empty? wp-body)...]
+    [else ...(func (first wp-body))...(fun-body (rest wp-body))]))
+|#
+
+
+#|
+https://htdp.org/2003-09-26/Solutions/wp-to-file.html
+习题 15.3.2 开发函数 wp-to-file,该函数读入一个网页,返回符号表。该表包含网页主体中所有单词以及
+嵌入网页的所有头部，而忽略直接嵌入网页的主体。
+
+|#

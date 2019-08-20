@@ -1,0 +1,11 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-intermediate-reader.ss" "lang")((modname 习题14.4.3) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#|
+习题 14.4.3 给出数表达式的数据定义。开发函数 evaluate-expression,该函数读入一个 Scheme 表达式(的
+表示法），计算它的值。在完成这个函数的测试之后，修改它，使它可以读入所有类型的 Scheme 表达式；
+如果修改后的函数遇到一个变量，它就产生一个错误信息。
+|#
+
+(define-struct add (left right))
+(define-struct mul (left right))

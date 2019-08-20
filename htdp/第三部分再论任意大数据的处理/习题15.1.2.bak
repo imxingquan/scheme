@@ -1,0 +1,8 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-intermediate-reader.ss" "lang")((modname 习题15.1.2) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#|
+习题 15.1.2 开发函数 how-far-removed,如果存在蓝眼睛后代的话,该函数判断给定的 parent 离开蓝眼睛
+的后代有多远。如果给定的 parent 就是蓝眼睛的，这个距离就是 0；如果他不是蓝眼睛的，但是他的某个
+孩子是蓝眼睛的，这个距离就是 1；以此类推。如果给定的 parent 没有蓝眼睛后代，函数就返回 false。
+|#
