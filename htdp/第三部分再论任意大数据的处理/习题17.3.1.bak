@@ -1,0 +1,14 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname 习题17.3.1) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#|
+
+习题 17.3.1 开发 list-pick0,该函数从表中选出一个元素,类似于list-pick,但是从0 开始计数。
+例如:
+(symbol=? (list-pick0 (list 'a 'b 'c 'd) 3)
+'d)
+(list-pick0 (list 'a 'b 'c 'd) 4)
+;; 希望的效果:
+(error 'list-pick0 "the list is too short")
+|#
+
