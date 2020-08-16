@@ -1,0 +1,12 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname 习题17.8.4) (read-case-sensitive #t) (teachpacks ((lib "hangman.rkt" "teachpack" "htdp"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "hangman.rkt" "teachpack" "htdp")) #f)))
+#|https://htdp.org/2003-09-26/Solutions/list-1.html
+
+习题 17.8.4 开发 contains-same-numbers,该函数判断两个数表是否包含相同的数,而不管它们的顺序。例
+如
+(contains-same-numbers (list 1 2 3) (list 3 2 1))
+计算出true。
+
+
+|#

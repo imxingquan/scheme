@@ -1,0 +1,14 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname 习题17.6.3) (read-case-sensitive #t) (teachpacks ((lib "hangman.rkt" "teachpack" "htdp"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "hangman.rkt" "teachpack" "htdp")) #f)))
+;;
+#|
+习题 17.6.3 在某个工厂里,员工早上到达以及晚上离开时都要打卡(用记时钟在考勤卡上打印上下班时
+间)。现代化的电子考勤卡记录了员工的号码和工作时间。另外,员工记录包含员工的名字,号码和单位
+工资。
+开发函数 hours->wages2。该函数读入一个员工记录表和一个(电子)考勤卡表。函数对员工记录和
+考勤卡中的员工号码进行匹配,计算每位员工的周工资。如果某条员工记录和(电子)考勤卡不能匹配,
+或者无法匹配,函数就发出一个相应的错误信息并停止运行。假设每一位员工最多只有一张考勤卡,每个
+员工号码也最多只有一张考勤卡。
+提示: 会计员一般会先按照员工号码对这两个表排序。
+|#

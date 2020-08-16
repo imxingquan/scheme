@@ -1,0 +1,16 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname 习题17.6.2) (read-case-sensitive #t) (teachpacks ((lib "hangman.rkt" "teachpack" "htdp"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "hangman.rkt" "teachpack" "htdp")) #f)))
+
+
+;; contract/header/puropse
+; (define (reveal-list lst-of-word lst-of-status l)...)
+
+;; Example
+;; Given (reveal-list (list 't 'e 'a) (list '_ 'e '_) 'u)
+;;    reveal-list should produce (list '_ 'e '_)
+;; Given (reveal-list (list 'a 'l 'e) (list 'a '_ '_) 'e)
+;;    reveal-list should  (list 'a '_ 'e)
+;; Given (reveal-list (list 'a 'l 'l) (list '_ '_ '_) 'l)
+;;    reveal-list showld produce (list '_ 'l 'l)
+

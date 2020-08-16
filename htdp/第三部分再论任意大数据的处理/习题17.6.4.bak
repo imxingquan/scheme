@@ -1,0 +1,18 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname 习题17.6.4) (read-case-sensitive #t) (teachpacks ((lib "hangman.rkt" "teachpack" "htdp"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "hangman.rkt" "teachpack" "htdp")) #f)))
+#|
+习题 17.6.4 线性组合是线性元素之和,而线性元素是变量和数的积,这里的数被称作系数。这是一些例
+子:
+在这三个例子中,x 的系数是5,y 的系数是17,z 的系数是3。
+如果给定了变量的值,我们就可以求出多项式的值。例如,如果 x=10,5·x 的值就是50;如果x=
+10 而y=1,5·x+17·y 的值就是67;如果x=10, y=1 而z=2,5·x+17·y+3·z 的值就是73。
+过去人们用函数来计算线性组合的值。线性组合的另一种表示法是系数表示法,上述三个线性组合可
+以表示为:
+(list 5)
+(list 5 17)
+(list 5 17 3)
+这个表示法假设我们总是按照某个固定的顺序排列变量。
+开发函数 value,该函数读入一个多项式的表示以及一个数表,这两个表是等长的。函数返回多项式
+关于这些值的值。
+|#

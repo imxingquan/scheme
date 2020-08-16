@@ -1,0 +1,10 @@
+#lang racket
+(require rackunit)
+(member 1 '(3 4 1 5))
+
+(if (member 1 '(3 4 1 5))
+    '1-is-in
+    'not-in)
+
+(check-equal? 6 6 "NUMBERS MATTER!")
+(check-pred number? 5)

@@ -1,0 +1,23 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname 习题17.6.5) (read-case-sensitive #t) (teachpacks ((lib "hangman.rkt" "teachpack" "htdp"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "hangman.rkt" "teachpack" "htdp")) #f)))
+#|
+习题17.6.5 
+
+|#
+
+;; gift-pick: list-of-names -> list-of-names
+;; 为names “随机地”选择一个不相同的排列
+(define (gift-pick names)
+(random-pick
+(non-same names (arrangements names))))
+
+;;Templete
+#|
+(define (non-same list-of-names list-of-list-of-names)
+  (cond
+    [(empty? list-of-names) ...]
+    [else
+       (first list-of-names)...(first list-of-list-of-names)...
+       (rest list-of-names)...(rest list-of-list-of-names)...]))
+|#
