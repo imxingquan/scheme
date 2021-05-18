@@ -1,0 +1,28 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-advanced-reader.ss" "lang")((modname 习题21.1.1) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #t #t none #f () #f)))
+#|
+习题 21.1.1 定义下列两个函数的抽象,并将其命名为tabulate:
+;; tabulate-sin : number-> lon
+;; 列出从n 到0(包括0)的
+正弦函数表
+(define (tabulate-sin n)
+(cond
+[(= n 0) (list (sin0))]
+[else
+(cons (sin n)
+(tabulate-sin (sub1
+n)))]))
+
+;; tabulate-sqrt : number-> lon
+;; 列出从n 到0(包括0)的根
+号函数表
+(define (tabulate-sqrt n)
+(cond
+[(= n 0) (list (sqrt 0))]
+[else
+ (cons (sqrt n)
+(tabulate-sqrt (sub1 n)))]))
+不要忘了使用tabulate 反过来定义这两个函数。再使用tabulate 定义sqr 和tan 的制表函数。tabulate
+函数正确、通用的合约又是怎样的?
+|#

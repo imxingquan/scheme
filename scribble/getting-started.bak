@@ -1,0 +1,4 @@
+#lang scribble/manual
+
+@title[#;tag "getting-stared" #:style 'toc]{Getting Started}
+
